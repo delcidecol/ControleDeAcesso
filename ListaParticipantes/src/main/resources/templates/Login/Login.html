@@ -22,36 +22,33 @@
 </head>
 
 <body>
-<div class=" container">
+<div style="margin-top: 10%" class=" container">
     <h1 class="text-center mt-5">Mundo Senai</h1>
     <form action="/" method="post">
 
 
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
-            <input id="usuario" name="usuario" type="text" class="form-control" placeholder="Username"/>
-
+            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user-large"></i></span>
+            <input id="usuario" name="usuario" type="text" class="form-control" placeholder="Username"
+                   aria-label="Username" aria-describedby="" username/>
         </div>
-        <div class="mb-3">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="sp-senha">@</span>
-                <input id="senha" nome="senha" type="password" class="form-control" placeholder="Senha"
-                       aria-label="senha" aria-describedby="senha">
-            </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="sp-senha"><i class="fa-solid fa-key"></i></span>
+            <input id="senha" name="senha" type="password" class="form-control" placeholder="Senha"
+                   aria-label="senha" aria-describedby="senha">
         </div>
 
         <div class="row">
             <div class="col-sm-6">
                 <input value="Login" type="submit" class="btn btn-primary"/>
             </div>
+
             <div class="col-sm-6 text-right">
                 <span class="btn btn-success">Cadastre-se</span>
             </div>
         </div>
     </form>
 </div>
-
-
-
 </body>
 </html>
