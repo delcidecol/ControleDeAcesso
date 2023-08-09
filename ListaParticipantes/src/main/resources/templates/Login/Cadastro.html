@@ -22,58 +22,71 @@
 </head>
 <body>
 <div style="margin-top: 3%" class="container">
-    <h1 class="text-left">Cadastro de Visitante</h1>
-
+    <h1 class="col-sm 4 mt-5">Cadastro de Visitante</h1>
     <div class="container">
         <form action="/cadastro" method="post">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="sp-nome"><i class="fa-solid fa-user-large"></i></span>
-                <input id="nome" name="nome" type="text" class="form-control" placeholder="Nome"
-                       aria-label="Nome"
-                       aria-describedby="sp-nome">
-            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="sp-nome"><i class="fa-solid fa-user-large"></i></span>
+                        <input id="nome" name="nome" type="text" class="form-control" placeholder="Nome"
+                               aria-label="Nome"
+                               aria-describedby="sp-nome">
+                    </div>
+                </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="sp-cpf"><i class="fa-solid fa-user-large"></i></span>
-                <input id="cpf" name="cpf" type="text" class="form-control" placeholder="CPF"
-                       aria-label="Cpf"
-                       aria-describedby="sp-cpf">
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="sp-telefone"><i class="fa-solid fa-phone"></i></span>
-                <input id="telefone" name="telefone" type="text" class="form-control" placeholder="Telefone"
-                       aria-label="Telefone"
-                       aria-describedby="sp-telefone">
-            </div>
+                <div class="col-sm-4">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="sp-cpf"><i class="fa-solid fa-id-card"></i></i></span>
+                        <input id="cpf" name="cpf" type="text" class="form-control" placeholder="Cpf"
+                               aria-label="Cpf"
+                               aria-describedby="sp-cpf">
+                    </div>
+                </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="sp-email"><i class="fa-solid fa-user-large"></i></span>
-                <input id="email" name="email" type="text" class="form-control" placeholder="e-mail"
-                       aria-label="email"
-                       aria-describedby="sp-email">
-            </div>
+                <div class="col-sm-8">
+                    <div class="input-group mb-8">
+                        <span class="input-group-text" id="sp-telefone"><i class="fa-solid fa-phone"></i></span>
+                        <input id="telefone" name="telefone" type="text" class="form-control" placeholder="Telefone"
+                               aria-label="Telefone"
+                               aria-describedby="sp-telefone">
+                    </div>
+                </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="sp-senha"><i class="fa-solid fa-user-large"></i></span>
-                <input id="senha" name="senha" type="password" class="form-control" placeholder="Senha"
-                       aria-label="senha"
-                       aria-describedby="sp-senha">
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="sp-confimaSenha"><i class="fa-solid fa-user-large"></i></span>
-                <input id="confirmaSenha" name="confirmaSenha" type="password" class="form-control" placeholder="Confirmar Senha"
-                       aria-label="confirmaSenha"
-                       aria-describedby="sp-confirmaSenha">
+                <div class="col-sm-4">
+                    <div class="input-group mb-4">
+                        <span class="input-group-text" id="sp-email"><i class="fa-solid fa-envelope"></i></i></span>
+                        <input id="email" name="email" type="text" class="form-control" placeholder="e-mail"
+                               aria-label="email"
+                               aria-describedby="sp-email">
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="sp-senha"><i class="fa-solid fa-lock"></i></i></span>
+                        <input id="senha" name="senha" type="password" class="form-control" placeholder="Senha"
+                               aria-label="senha"
+                               aria-describedby="sp-senha">
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="sp-confimaSenha"><i class="fa-solid fa-lock"></i></i></span>
+                        <input id="confirmaSenha" name="confirmaSenha" type="password" class="form-control"
+                               placeholder="Confirmar Senha"
+                               aria-label="confirmaSenha"
+                               aria-describedby="sp-confirmaSenha">
+                    </div>
+                </div>
+                <div class="col-sm-12 text-right">
+                    <input value="Cadastre-se" Type="submit" class="btn btn-primary">
+                </div>
             </div>
 
         </form>
     </div>
 </div>
-
-
-</div>
-
-
 </body>
-
 </html>
