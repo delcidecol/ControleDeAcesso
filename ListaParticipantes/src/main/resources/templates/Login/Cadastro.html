@@ -1,5 +1,7 @@
+
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -22,6 +24,7 @@
 </head>
 <body>
 <div style="margin-top: 3%" class="container">
+    <div th:if=" ${mensagem} " th:utext=" ${mensagem} "></div>
     <h1 class="col-sm 4 mt-5">Cadastro de Visitante</h1>
     <div class="container">
         <form action="/cadastro" method="post">
