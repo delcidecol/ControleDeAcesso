@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class C_Pessoa {
@@ -21,7 +22,6 @@ public class C_Pessoa {
                               @RequestParam("senha") String senha) {
         return "Home/home";
     }
-
     @GetMapping("/cadastro")
     public String getCadastro() {
         return "Login/Cadastro";
@@ -33,14 +33,20 @@ public class C_Pessoa {
                                @RequestParam("telefone") String telefone,
                                @RequestParam("email") String email,
                                @RequestParam("senha") String senha,
-                               @RequestParam("confirmaSenha") String confirmaSenha, Model model) {
+                               @RequestParam("confirmaSenha") String confirmaSenha, RedirectAttributes redirectAttributes) {
         M_Resposta m_resposta = S_Pessoa.cadastrarPessoa(nome, cpf, telefone, email, senha, confirmaSenha);
         if (m_resposta.getStatus()) {
-            model.addAttribute("mensagem", m_resposta.getMensagem());
-            return "Login/Login";
+            redirectAttributes.addFlashAttribute("mensagem", m_resposta.getMensagem());
+            return "redirect:/";
         } else {
-            model.addAttribute("mensagem", m_resposta.getMensagem());
-            return "Login/Cadastro";
+            redirectAttributes.addFlashAttribute("mensagem", m_resposta.getMensagem());
+            redirectAttributes.addFlashAttribute("nome", nome);
+            redirectAttributes.addFlashAttribute("cpf", cpf);
+            redirectAttributes.addFlashAttribute("email", email);
+            redirectAttributes.addFlashAttribute("telefone", telefone);
+            redirectAttributes.addFlashAttribute("senha", senha);
+            redirectAttributes.addFlashAttribute("confirmaSenha", confirmaSenha);
+            return "redirect:/cadastro";
         }
     }
 }
