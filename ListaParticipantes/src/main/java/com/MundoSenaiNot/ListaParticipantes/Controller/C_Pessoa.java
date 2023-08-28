@@ -1,11 +1,10 @@
 package com.MundoSenaiNot.ListaParticipantes.Controller;
-
 import com.MundoSenaiNot.ListaParticipantes.Model.M_Resposta;
+import com.MundoSenaiNot.ListaParticipantes.Service.S_Login;
 import com.MundoSenaiNot.ListaParticipantes.Service.S_Pessoa;
+import org.springframework.session.Session;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -17,11 +16,19 @@ public class C_Pessoa {
         return "Login/Login";
     }
 
+
     @PostMapping("/")
     public String loginPessoa(@RequestParam("usuario") String usuario,
-                              @RequestParam("senha") String senha) {
-        return "Home/home";
+                              @RequestParam("senha") String senha,
+                              Session session) {
+        session.setAttribute("usuario", S_Login.validaLogin(usuario, senha));
+        if(session.getAttribute("usurio") != null){
+            return "redirect:/Home";
+        }else {
+            return "redirect:/";
+        }
     }
+
     @GetMapping("/cadastro")
     public String getCadastro() {
         return "Login/Cadastro";
